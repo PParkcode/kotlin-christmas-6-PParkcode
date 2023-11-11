@@ -1,8 +1,8 @@
 package christmas.io
 
 class UserInterface(
-    private val output: OutputView,
-    private val input: InputView
+    private val output: OutputView = OutputView(),
+    private val input: InputView = InputView()
 ) {
     fun printIntroMsg() {
         output.printIntroMsg()
