@@ -16,4 +16,11 @@ class MenuTest {
         assertThat(dessert.isContain("제로콜라")).isFalse()
         assertThat(drink.isContain("아이스크림")).isFalse()
     }
+
+    @Test
+    fun `메뉴의 가격을 올바르게 가져오는지 테스트`() {
+        val appetizer = Course.Appetizer
+
+        assertThat(appetizer.getPrice("시저샐러드")).isEqualTo(8000)
+    }
 }
