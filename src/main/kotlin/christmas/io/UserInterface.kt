@@ -19,4 +19,16 @@ class UserInterface(
             }
         }
     }
+
+    fun askMenus(): List<Pair<String,Int>>{
+        var menus: List<Pair<String,Int>>
+        while(true) {
+            try {
+                menus = input.readMenu()
+                return menus
+            } catch (e:IllegalArgumentException) {
+                println(e.message)
+            }
+        }
+    }
 }

@@ -6,5 +6,7 @@ class Cashier {
 
     fun readMenus() {
         val ui = UserInterface()
+        val menus = ui.askMenus()
     }
+
 }
