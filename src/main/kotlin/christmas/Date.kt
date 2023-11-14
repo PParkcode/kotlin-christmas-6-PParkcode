@@ -1,9 +1,10 @@
 package christmas
 
+import christmas.io.UserInterface
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class Date(private val day: Int) {
+class Date(private val day: Int, private val dayOfWeek:String) {
 
     fun getChristmasSale(): Int {
         if (day > 25) {
@@ -11,12 +12,10 @@ class Date(private val day: Int) {
         }
         return 1000 + ((day - 1) * 100)
     }
-    fun getDayOfWeek():String {
-        val visitDate= "2023-12-$day" // 예시 날짜
-        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-d")
-        val date = LocalDate.parse(visitDate, formatter)
 
-        return date.dayOfWeek.toString()
-
+    fun printVisitDateService() {
+        val ui = UserInterface()
+        ui.printVisitDateService(day)
     }
+
 }

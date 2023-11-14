@@ -6,8 +6,10 @@ class Menu(
     val initPrice: Int,
     val count: Int,
     val course: Course,
-    val finalPrice:Int
+    val finalPrice: Int
 ) {
-
+    fun getPrice(): Int {
+        return initPrice * count
+    }
 
 }
