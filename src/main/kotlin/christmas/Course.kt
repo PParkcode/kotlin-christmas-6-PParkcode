@@ -23,4 +23,17 @@ enum class Course(private val nameToPrice:Map<String,Int>) {
         }
         return Course.NotFound
     }
+
+
+    companion object {
+        fun findCourse(foodName: String): Course {
+            for (course in values()) {
+                if (foodName in course.nameToPrice) {
+                    return course
+                }
+            }
+            return NotFound
+        }
+    }
+
 }
