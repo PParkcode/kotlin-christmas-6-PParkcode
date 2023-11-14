@@ -25,4 +25,47 @@ class SaleTest {
         assertThat(saleAmount).isEqualTo(0)
     }
 
+    @Test
+    fun `요일 확인 기능 테스트1`(){
+        val date = Date(1)
+        val dayOfWeek = date.getDayOfWeek()
+        assertThat(dayOfWeek).isEqualTo("FRIDAY")
+    }
+    @Test
+    fun `요일 확인 기능 테스트2`(){
+        val date = Date(2)
+        val dayOfWeek = date.getDayOfWeek()
+        assertThat(dayOfWeek).isEqualTo("SATURDAY")
+    }
+    @Test
+    fun `요일 확인 기능 테스트3`(){
+        val date = Date(3)
+        val dayOfWeek = date.getDayOfWeek()
+        assertThat(dayOfWeek).isEqualTo("SUNDAY")
+    }
+    @Test
+    fun `요일 확인 기능 테스트4`(){
+        val date = Date(4)
+        val dayOfWeek = date.getDayOfWeek()
+        assertThat(dayOfWeek).isEqualTo("MONDAY")
+    }
+    @Test
+    fun `요일 확인 기능 테스트5`(){
+        val date = Date(5)
+        val dayOfWeek = date.getDayOfWeek()
+        assertThat(dayOfWeek).isEqualTo("TUESDAY")
+    }
+    @Test
+    fun `요일 확인 기능 테스트6`(){
+        val date = Date(6)
+        val dayOfWeek = date.getDayOfWeek()
+        assertThat(dayOfWeek).isEqualTo("WEDNESDAY")
+    }
+    @Test
+    fun `요일 확인 기능 테스트7`(){
+        val date = Date(7)
+        val dayOfWeek = date.getDayOfWeek()
+        assertThat(dayOfWeek).isEqualTo("THURSDAY")
+    }
+
 }

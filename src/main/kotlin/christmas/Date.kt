@@ -11,9 +11,9 @@ class Date(private val day: Int) {
         }
         return 1000 + ((day - 1) * 100)
     }
-    fun isWeekDayOrWeekend():String {
+    fun getDayOfWeek():String {
         val visitDate= "2023-12-$day" // 예시 날짜
-        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-d")
         val date = LocalDate.parse(visitDate, formatter)
 
         return date.dayOfWeek.toString()
