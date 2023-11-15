@@ -1,5 +1,9 @@
 package christmas
 
+import christmas.io.InputView
+import christmas.io.UserInterface
+
 fun main() {
-    TODO("프로그램 구현")
+    val eventController = EventController()
+    eventController.go()
 }

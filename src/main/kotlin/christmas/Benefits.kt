@@ -24,8 +24,19 @@ class Benefits(
         }
     }
 
-    fun getTotalBenefitAmount() {
-        //return christmasSaleAmount + weekSaleAmount + specialSaleAmount + gift
+    fun printTotalBenefitAmount() {
+        val ui = UserInterface()
+
+        ui.printTotalBenefitAmountIntroMsg()
+        ui.printTotalBenefitAmount(getTotalBenefitAmount())
+    }
+
+    fun getTotalBenefitAmount():Int {
+        var totalBenefitAmount = 0
+        for(benefit in myBenefits) {
+            totalBenefitAmount += benefit.getAmount()
+        }
+        return totalBenefitAmount * (-1)
     }
 
     fun getTotalDiscount() {

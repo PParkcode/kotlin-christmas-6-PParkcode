@@ -62,4 +62,11 @@ class MyOrders(private val menus: List<Menu>, private val benefits: Benefits) {
     fun printMyBenefits() {
         benefits.printMyBenefits()
     }
+    fun printTotalBenefitAmount() {
+        benefits.printTotalBenefitAmount()
+    }
+
+    fun getTotalBenefitAmount():Int {
+        return benefits.getTotalBenefitAmount()
+    }
 }

@@ -8,4 +8,8 @@ class GiftEvent(private val amount: Int): ISaleEvent {
         val ui = UserInterface()
         ui.printBenefit("증정 이벤트", amount)
     }
+
+    override fun getAmount():Int {
+        return amount
+    }
 }

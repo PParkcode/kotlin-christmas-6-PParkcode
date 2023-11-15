@@ -8,4 +8,8 @@ class WeekendSale(private val amount: Int): ISaleEvent {
         val ui = UserInterface()
         ui.printBenefit("주말 할인", amount)
     }
+
+    override fun getAmount():Int {
+        return amount
+    }
 }

@@ -53,6 +53,13 @@ class UserInterface(
         output.printBenefit(eventName, saleAmount)
     }
 
+    fun printTotalBenefitAmountIntroMsg() {
+        output.printTotalBenefitAmountIntroMsg()
+    }
+    fun printTotalBenefitAmount(amount:Int) {
+        output.printTotalBenefitAmount(amount)
+    }
+
     fun printNothing() {
         output.printNothing()
     }

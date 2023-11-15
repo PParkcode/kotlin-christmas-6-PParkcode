@@ -8,4 +8,8 @@ class ChristmasSale(private val amount: Int): ISaleEvent {
         val ui =UserInterface()
         ui.printBenefit("크리스마스 디데이 할인", amount)
     }
+
+    override fun getAmount():Int {
+        return amount
+    }
 }
