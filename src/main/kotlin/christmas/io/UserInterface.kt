@@ -39,10 +39,21 @@ class UserInterface(
     }
 
     fun printVisitDateService(day: Int) {
-        println("12월 ${day}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!")
+        output.printVisitDateService(day)
     }
 
     fun printMyOrders(menus: List<Menu>) {
         output.printMyOrders(menus)
+    }
+    fun printBenefitIntroMsg() {
+        output.printBenefitIntroMsg()
+    }
+
+    fun printBenefit(eventName:String, saleAmount:Int) {
+        output.printBenefit(eventName, saleAmount)
+    }
+
+    fun printNothing() {
+        output.printNothing()
     }
 }

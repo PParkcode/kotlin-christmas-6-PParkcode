@@ -1,8 +1,6 @@
 package christmas
 
 import christmas.io.UserInterface
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 class Date(private val day: Int, private val dayOfWeek:String) {
 
@@ -16,6 +14,13 @@ class Date(private val day: Int, private val dayOfWeek:String) {
     fun printVisitDateService() {
         val ui = UserInterface()
         ui.printVisitDateService(day)
+    }
+
+    fun isWeekend():Boolean {
+        return dayOfWeek == "FRIDAY" || dayOfWeek== "SATURDAY"
+    }
+    fun isSpecialSaleDay():Boolean {
+        return dayOfWeek == "SUNDAY" || day == 25
     }
 
 }

@@ -8,8 +8,14 @@ class Menu(
     val course: Course,
     val finalPrice: Int
 ) {
-    fun getPrice(): Int {
+    fun getInitTotalPrice(): Int {
         return initPrice * count
+    }
+    fun isEqualCourse(courseName:String):Int {
+        if(course.name == courseName) {
+            return count
+        }
+        return 0
     }
 
 }

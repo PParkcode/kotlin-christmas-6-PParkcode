@@ -8,16 +8,23 @@ class EventController(private val ui: UserInterface = UserInterface()) {
 
     fun go() {
         ui.printIntroMsg()
+
         val visitDate = ui.askDate()
         val dayOfWeek = getDayOfWeek(visitDate)
         val date = Date(visitDate, dayOfWeek)
+
         val cashier = Cashier()
         val menus = cashier.readMenus()
         val myOrders  = cashier.makeOrders(menus)
+
         date.printVisitDateService()
         myOrders.printMyOrders()
+
         val initTotalPrice = myOrders.getInitTotalPrice()
         myOrders.printInitTotalPrice(initTotalPrice)
+        val eventProvider = EventProvider(myOrders,date)
+        eventProvider.applyEvents()
+        eventProvider.printMyBenefits()
 
 
     }
