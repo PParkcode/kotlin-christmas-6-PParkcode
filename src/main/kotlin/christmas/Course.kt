@@ -14,17 +14,6 @@ enum class Course(private val nameToPrice:Map<String,Int>) {
         return nameToPrice[food]!!
     }
 
-    fun getCourse(food:String):Course {
-        val courses = Course.values()
-        for(course in courses) {
-            if(course.isContain(food)) {
-                return course
-            }
-        }
-        return Course.NotFound
-    }
-
-
     companion object {
         fun findCourse(foodName: String): Course {
             for (course in values()) {

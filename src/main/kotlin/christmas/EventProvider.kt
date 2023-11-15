@@ -1,5 +1,7 @@
 package christmas
 
+import christmas.io.UserInterface
+
 class EventProvider(private val myOrders: MyOrders, private val date: Date) {
 
     fun applyEvents() {
@@ -9,7 +11,17 @@ class EventProvider(private val myOrders: MyOrders, private val date: Date) {
             applySpecialSale()
             applyGiftEvent()
         }
+    }
 
+    fun printGiftEvent() {
+        val ui =UserInterface()
+        ui.printGiftEventIntroMsg()
+        if(myOrders.isContainGiftEvent()) {
+            ui.printGiftEvent("샴페인", 1)
+            return
+        }
+
+        ui.printNothing()
     }
 
     fun printMyBenefits() {

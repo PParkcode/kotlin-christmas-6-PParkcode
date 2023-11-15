@@ -31,6 +31,13 @@ class OutputView {
         println("12월 ${day}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!")
         println()
     }
+    fun printGiftEventIntroMsg() {
+        println("<증정 메뉴>")
+    }
+    fun printGift(gift:String, count:Int) {
+        println("$gift ${count}개")
+        println()
+    }
 
     fun printBenefitIntroMsg() {
         println("<혜택 내역>")

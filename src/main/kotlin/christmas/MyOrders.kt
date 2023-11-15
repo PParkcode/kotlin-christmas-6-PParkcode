@@ -66,6 +66,10 @@ class MyOrders(private val menus: List<Menu>, private val benefits: Benefits) {
         benefits.printTotalBenefitAmount()
     }
 
+    fun isContainGiftEvent():Boolean {
+        return benefits.isGiftEvent()
+    }
+
     fun getTotalBenefitAmount():Int {
         return benefits.getTotalBenefitAmount()
     }

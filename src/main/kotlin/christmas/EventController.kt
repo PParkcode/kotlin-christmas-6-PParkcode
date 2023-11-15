@@ -24,6 +24,7 @@ class EventController(private val ui: UserInterface = UserInterface()) {
         myOrders.printInitTotalPrice(initTotalPrice)
         val eventProvider = EventProvider(myOrders,date)
         eventProvider.applyEvents()
+        eventProvider.printGiftEvent()
         eventProvider.printMyBenefits()
 
         eventProvider.printMyTotalBenefitAmount()

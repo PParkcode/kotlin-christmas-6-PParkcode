@@ -45,6 +45,12 @@ class UserInterface(
     fun printMyOrders(menus: List<Menu>) {
         output.printMyOrders(menus)
     }
+    fun printGiftEventIntroMsg() {
+        output.printGiftEventIntroMsg()
+    }
+    fun printGiftEvent(gift:String, count:Int) {
+        output.printGift(gift, count)
+    }
     fun printBenefitIntroMsg() {
         output.printBenefitIntroMsg()
     }

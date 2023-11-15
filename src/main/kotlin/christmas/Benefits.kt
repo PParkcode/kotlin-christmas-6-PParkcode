@@ -8,8 +8,18 @@ class Benefits(
     private val myBenefits:MutableList<ISaleEvent>
 ) {
 
+
     fun addMyBenefit(event:ISaleEvent) {
         myBenefits.add(event)
+    }
+
+    fun isGiftEvent(): Boolean {
+        for(benefit in myBenefits) {
+            if(benefit is GiftEvent ) {
+                return true
+            }
+        }
+        return false
     }
     fun printMyBenefits() {
         val ui = UserInterface()
