@@ -1,5 +1,6 @@
 package christmas.io
 
+import christmas.event.ISaleEvent
 import christmas.user.Menu
 
 class OutputView {
@@ -45,9 +46,14 @@ class OutputView {
         val formattedAmount = String.format("%,d", saleAmount)
         println("${eventName}: -${formattedAmount}원")
     }
+    fun printBenefit(saleEvents: List<ISaleEvent>) {
+        for(saleEvent in saleEvents) {
+            saleEvent.printMySale()
+        }
+        println()
+    }
 
     fun printTotalBenefitAmountIntroMsg() {
-        println()
         println("<총혜택 금액>")
     }
 

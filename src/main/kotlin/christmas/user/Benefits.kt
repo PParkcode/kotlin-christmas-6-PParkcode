@@ -30,9 +30,7 @@ class Benefits(
             ui.printNothing()
             return
         }
-        for (benefit in myBenefits) {
-            benefit.printMySale()
-        }
+        ui.printBenefit(myBenefits)
     }
 
     fun printTotalBenefitAmount() {

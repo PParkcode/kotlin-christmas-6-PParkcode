@@ -1,5 +1,6 @@
 package christmas.io
 
+import christmas.event.ISaleEvent
 import christmas.user.Menu
 
 class UserInterface(
@@ -58,9 +59,14 @@ class UserInterface(
         output.printBenefitIntroMsg()
     }
 
+    fun printBenefit(events: List<ISaleEvent>) {
+        output.printBenefit(events)
+    }
+
     fun printBenefit(eventName: String, saleAmount: Int) {
         output.printBenefit(eventName, saleAmount)
     }
+
 
     fun printTotalBenefitAmountIntroMsg() {
         output.printTotalBenefitAmountIntroMsg()
