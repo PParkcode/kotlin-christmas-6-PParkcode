@@ -71,6 +71,11 @@ class UserInterface(
         output.printFinalPrice(price)
     }
 
+    fun printEventBadge(type:String) {
+        output.printEventBadgeIntroMsg()
+        output.printEventBadge(type)
+    }
+
     fun printNothing() {
         output.printNothing()
     }

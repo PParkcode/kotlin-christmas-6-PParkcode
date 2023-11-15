@@ -39,6 +39,24 @@ class EventProvider(private val myOrders: MyOrders, private val date: Date) {
         ui.printFinalPrice(finalPrice)
     }
 
+    fun printEventBadge() {
+        val totalBefit= myOrders.getTotalBenefitAmount()
+        val ui = UserInterface()
+        if(totalBefit>20000) {
+            ui.printEventBadge(EventBadge.SANTA.getType())
+            return
+        }
+        if(totalBefit>10000) {
+            ui.printEventBadge(EventBadge.TREE.getType())
+            return
+        }
+        if(totalBefit>5000) {
+            ui.printEventBadge(EventBadge.STAR.getType())
+            return
+        }
+        ui.printEventBadge(EventBadge.NOTHING.getType())
+    }
+
     private fun applyChristmasSale() {
         val christmasSale = date.getChristmasSale()
         if(christmasSale>0) {
