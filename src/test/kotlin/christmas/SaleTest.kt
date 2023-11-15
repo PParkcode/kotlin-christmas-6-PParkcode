@@ -43,6 +43,13 @@ class SaleTest {
         assertThat(benefits.getTotalBenefitAmount()).isEqualTo(28323)
     }
 
+    @Test
+    fun `증정 상품 가격을 제외하고, 얼만큼 할인되는지 테스트`() {
+        val benefits =Benefits(mutableListOf<ISaleEvent>(ChristmasSale("",1300),
+            WeekendSale("",2023),GiftEvent("",25000)))
+        assertThat(benefits.getTotalDiscount()).isEqualTo(3323)
+    }
+
 
 
 
