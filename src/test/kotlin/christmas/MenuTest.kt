@@ -1,6 +1,7 @@
 package christmas
 
 import christmas.data.Course
+import christmas.user.Menu
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
 class MenuTest {
@@ -23,5 +24,11 @@ class MenuTest {
         val appetizer = Course.APPETIZER
 
         assertThat(appetizer.getPrice("시저샐러드")).isEqualTo(8000)
+    }
+
+    @Test
+    fun `주문한 갯수 만큼의 금액을 반환하는지 테스트`() {
+        val menu = Menu("양송이수프",6000,5,Course.APPETIZER)
+        assertThat(menu.getInitTotalPrice()).isEqualTo(30000)
     }
 }
