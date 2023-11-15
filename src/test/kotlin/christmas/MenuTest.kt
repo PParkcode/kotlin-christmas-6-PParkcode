@@ -1,7 +1,10 @@
 package christmas
 
 import christmas.data.Course
+import christmas.event.ISaleEvent
+import christmas.user.Benefits
 import christmas.user.Menu
+import christmas.user.MyOrders
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
 class MenuTest {
@@ -30,5 +33,21 @@ class MenuTest {
     fun `주문한 갯수 만큼의 금액을 반환하는지 테스트`() {
         val menu = Menu("양송이수프",6000,5,Course.APPETIZER)
         assertThat(menu.getInitTotalPrice()).isEqualTo(30000)
+    }
+
+    @Test
+    fun `디저트 갯수 세기 테스트`() {
+        val myOrders = MyOrders(listOf(Menu("초코케이크",15000,3,Course.DESSERT),Menu("아이스크림",5000,2,Course.DESSERT)), Benefits(
+            mutableListOf<ISaleEvent>()
+        ))
+        assertThat(myOrders.countDessert()).isEqualTo(5)
+    }
+
+    @Test
+    fun `메인코스 갯수 세기 테스트`() {
+        val myOrders = MyOrders(listOf(Menu("티본스테이크",55000,3,Course.MAIN_COURSE),Menu("아이스크림",5000,2,Course.DESSERT)), Benefits(
+            mutableListOf<ISaleEvent>()
+        ))
+        assertThat(myOrders.countMainCourse()).isEqualTo(3)
     }
 }
