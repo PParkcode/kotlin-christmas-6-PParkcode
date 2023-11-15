@@ -73,4 +73,8 @@ class MyOrders(private val menus: List<Menu>, private val benefits: Benefits) {
     fun getTotalBenefitAmount():Int {
         return benefits.getTotalBenefitAmount()
     }
+
+    fun getTotalDiscountAmount(): Int {
+        return benefits.getTotalDiscount()
+    }
 }

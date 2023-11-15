@@ -16,7 +16,7 @@ class Cashier {
             val name = menu.first
             val count = menu.second
             val course = Course.findCourse(name)
-            myMenus.add(Menu(name, course.getPrice(name), count, course, course.getPrice(name)))
+            myMenus.add(Menu(name, course.getPrice(name), count, course))
         }
         return MyOrders(myMenus, Benefits(mutableListOf()))
     }

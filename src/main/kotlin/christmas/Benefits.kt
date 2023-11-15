@@ -46,10 +46,17 @@ class Benefits(
         for(benefit in myBenefits) {
             totalBenefitAmount += benefit.getAmount()
         }
-        return totalBenefitAmount * (-1)
+        return totalBenefitAmount
     }
 
-    fun getTotalDiscount() {
-        //return christmasSaleAmount + weekSaleAmount + specialSaleAmount
+    fun getTotalDiscount(): Int {
+        var totalBenefitDiscount = 0
+        for(benefit in myBenefits) {
+            if(benefit is GiftEvent) {
+                continue
+            }
+            totalBenefitDiscount += benefit.getAmount()
+        }
+        return totalBenefitDiscount
     }
 }

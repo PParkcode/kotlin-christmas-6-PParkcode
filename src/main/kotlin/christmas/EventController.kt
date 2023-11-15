@@ -29,6 +29,8 @@ class EventController(private val ui: UserInterface = UserInterface()) {
 
         eventProvider.printMyTotalBenefitAmount()
 
+        eventProvider.printMyFinalPrice()
+
 
     }
 

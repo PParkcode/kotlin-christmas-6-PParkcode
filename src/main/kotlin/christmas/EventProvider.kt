@@ -32,6 +32,13 @@ class EventProvider(private val myOrders: MyOrders, private val date: Date) {
         myOrders.printTotalBenefitAmount()
     }
 
+    fun printMyFinalPrice() {
+        val initPrice = myOrders.getInitTotalPrice()
+        val finalPrice = initPrice - myOrders.getTotalDiscountAmount()
+        val ui = UserInterface()
+        ui.printFinalPrice(finalPrice)
+    }
+
     private fun applyChristmasSale() {
         val christmasSale = date.getChristmasSale()
         if(christmasSale>0) {

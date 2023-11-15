@@ -16,7 +16,7 @@ class OutputView {
     fun printMyOrders(menus: List<Menu>) {
         println("<주문 메뉴>")
         for(menu in menus) {
-            println("${menu.name} ${menu.count}개")
+            println("${menu.getName()} ${menu.getCount()}개")
         }
         println()
     }
@@ -52,9 +52,19 @@ class OutputView {
     }
 
     fun printTotalBenefitAmount(amount:Int) {
-        println("${amount}원")
+        println("${-amount}원")
+        println()
+    }
+
+    fun printFinalPriceIntroMsg() {
+        println("<할인 후 예상 결제 금액>")
+    }
+    fun printFinalPrice(price:Int) {
+        println("${price}원")
+        println()
     }
     fun printNothing() {
         println("없음")
+        println()
     }
 }

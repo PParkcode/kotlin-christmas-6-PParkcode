@@ -2,11 +2,10 @@ package christmas
 
 
 class Menu(
-    val name: String,
-    val initPrice: Int,
-    val count: Int,
-    val course: Course,
-    val finalPrice: Int
+    private val name: String,
+    private val initPrice: Int,
+    private val count: Int,
+    private val course: Course,
 ) {
     fun getInitTotalPrice(): Int {
         return initPrice * count
@@ -16,6 +15,13 @@ class Menu(
             return count
         }
         return 0
+    }
+
+    fun getName():String {
+        return name
+    }
+    fun getCount():Int {
+        return count
     }
 
 }

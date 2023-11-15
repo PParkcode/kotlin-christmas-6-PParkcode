@@ -66,6 +66,11 @@ class UserInterface(
         output.printTotalBenefitAmount(amount)
     }
 
+    fun printFinalPrice(price:Int) {
+        output.printFinalPriceIntroMsg()
+        output.printFinalPrice(price)
+    }
+
     fun printNothing() {
         output.printNothing()
     }
