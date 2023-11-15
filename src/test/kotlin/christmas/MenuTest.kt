@@ -50,4 +50,5 @@ class MenuTest {
         ))
         assertThat(myOrders.countMainCourse()).isEqualTo(3)
     }
+
 }

@@ -1,5 +1,7 @@
 package christmas
 
+import christmas.event.*
+import christmas.user.Benefits
 import christmas.user.Date
 import christmas.user.MyOrders
 import org.junit.jupiter.api.Test
@@ -27,6 +29,20 @@ class SaleTest {
         val saleAmount = date.getChristmasSale()
         assertThat(saleAmount).isEqualTo(0)
     }
+
+    @Test
+    fun `총 혜택 금액 테스트`() {
+        val benefits =Benefits(mutableListOf<ISaleEvent>(ChristmasSale("",1300),WeekdaySale("",2023),SpecialSale("",1000)))
+        assertThat(benefits.getTotalBenefitAmount()).isEqualTo(4323)
+    }
+
+    @Test
+    fun `총 혜택 금액 테스트2`() {
+        val benefits =Benefits(mutableListOf<ISaleEvent>(ChristmasSale("",1300),
+            WeekendSale("",2023),GiftEvent("",25000)))
+        assertThat(benefits.getTotalBenefitAmount()).isEqualTo(28323)
+    }
+
 
 
 
