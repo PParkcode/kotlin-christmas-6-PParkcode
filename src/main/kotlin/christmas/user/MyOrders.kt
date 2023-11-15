@@ -1,4 +1,4 @@
-package christmas
+package christmas.user
 
 import christmas.event.*
 import christmas.io.UserInterface
@@ -13,7 +13,7 @@ class MyOrders(private val menus: List<Menu>, private val benefits: Benefits) {
         return totalPrice
     }
 
-    fun printInitTotalPrice(initPrice:Int) {
+    fun printInitTotalPrice(initPrice: Int) {
         val ui = UserInterface()
         ui.printInitPrice(initPrice)
     }
@@ -23,58 +23,67 @@ class MyOrders(private val menus: List<Menu>, private val benefits: Benefits) {
         ui.printMyOrders(menus)
     }
 
-    fun countDessert():Int {
+    fun countDessert(): Int {
         var count = 0
-        for(menu in menus) {
-            count+=menu.isEqualCourse("Dessert")
+        for (menu in menus) {
+            count += menu.isEqualCourse("DESSERT")
         }
         return count
     }
 
-    fun countMainCourse():Int {
+    fun countMainCourse(): Int {
         var count = 0
-        for(menu in menus) {
-            count+=menu.isEqualCourse("MainCourse")
+        for (menu in menus) {
+            count += menu.isEqualCourse("MAIN_COURSE")
         }
         return count
-     }
+    }
 
     fun applyGiftEvent(amount: Int) {
-        benefits.addMyBenefit(GiftEvent(amount))
+        benefits.addMyBenefit(GiftEvent(GIFT_EVENT, amount))
     }
 
     fun applyChristmasEvent(amount: Int) {
-        benefits.addMyBenefit(ChristmasSale(amount))
+        benefits.addMyBenefit(ChristmasSale(CHRISTMAS_EVENT, amount))
     }
 
-    fun applyWeekendEvent(amount:Int) {
-        benefits.addMyBenefit(WeekendSale(amount))
+    fun applyWeekendEvent(amount: Int) {
+        benefits.addMyBenefit(WeekendSale(WEEKEND_EVENT, amount))
     }
 
-    fun applyWeekdayEvent(amount:Int) {
-        benefits.addMyBenefit(WeekdaySale(amount))
+    fun applyWeekdayEvent(amount: Int) {
+        benefits.addMyBenefit(WeekdaySale(WEEKDAY_EVENT, amount))
     }
 
     fun applySpecialEvent(amount: Int) {
-        benefits.addMyBenefit(SpecialSale(amount))
+        benefits.addMyBenefit(SpecialSale(SPECIAL_EVENT, amount))
     }
 
     fun printMyBenefits() {
         benefits.printMyBenefits()
     }
+
     fun printTotalBenefitAmount() {
         benefits.printTotalBenefitAmount()
     }
 
-    fun isContainGiftEvent():Boolean {
+    fun isContainGiftEvent(): Boolean {
         return benefits.isGiftEvent()
     }
 
-    fun getTotalBenefitAmount():Int {
+    fun getTotalBenefitAmount(): Int {
         return benefits.getTotalBenefitAmount()
     }
 
     fun getTotalDiscountAmount(): Int {
         return benefits.getTotalDiscount()
+    }
+
+    companion object {
+        const val CHRISTMAS_EVENT = "크리스마스 디데이 할인"
+        const val WEEKDAY_EVENT = "평일 할인"
+        const val WEEKEND_EVENT = "주말 할인"
+        const val SPECIAL_EVENT = "특별 할인"
+        const val GIFT_EVENT = "증정 이벤트"
     }
 }

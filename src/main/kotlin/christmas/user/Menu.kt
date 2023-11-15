@@ -1,4 +1,6 @@
-package christmas
+package christmas.user
+
+import christmas.data.Course
 
 
 class Menu(
@@ -10,17 +12,19 @@ class Menu(
     fun getInitTotalPrice(): Int {
         return initPrice * count
     }
-    fun isEqualCourse(courseName:String):Int {
-        if(course.name == courseName) {
+
+    fun isEqualCourse(courseName: String): Int {
+        if (course.name == courseName) {
             return count
         }
         return 0
     }
 
-    fun getName():String {
+    fun getName(): String {
         return name
     }
-    fun getCount():Int {
+
+    fun getCount(): Int {
         return count
     }
 

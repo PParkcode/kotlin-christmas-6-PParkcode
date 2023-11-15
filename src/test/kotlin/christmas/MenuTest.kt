@@ -1,15 +1,16 @@
 package christmas
 
+import christmas.data.Course
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
 class MenuTest {
 
     @Test
     fun `해당 메뉴가 있는지 확인`() {
-        val appetizer =Course.Appetizer
-        val mainCourse = Course.MainCourse
-        val dessert = Course.Dessert
-        val drink = Course.Drink
+        val appetizer = Course.APPETIZER
+        val mainCourse = Course.MAIN_COURSE
+        val dessert = Course.DESSERT
+        val drink = Course.DRINK
 
         assertThat(appetizer.isContain("양송이수프")).isTrue()
         assertThat(mainCourse.isContain("바비큐립")).isTrue()
@@ -19,7 +20,7 @@ class MenuTest {
 
     @Test
     fun `메뉴의 가격을 올바르게 가져오는지 테스트`() {
-        val appetizer = Course.Appetizer
+        val appetizer = Course.APPETIZER
 
         assertThat(appetizer.getPrice("시저샐러드")).isEqualTo(8000)
     }

@@ -1,4 +1,4 @@
-package christmas
+package christmas.data
 
 enum class EventBadge(private val type: String) {
     STAR("별"),

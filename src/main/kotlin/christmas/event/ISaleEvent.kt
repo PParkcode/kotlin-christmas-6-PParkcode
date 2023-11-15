@@ -2,5 +2,5 @@ package christmas.event
 
 interface ISaleEvent {
     fun printMySale()
-    fun getAmount():Int
+    fun getAmount(): Int
 }

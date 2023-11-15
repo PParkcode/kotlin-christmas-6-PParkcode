@@ -1,6 +1,6 @@
 package christmas.io
 
-import christmas.Menu
+import christmas.user.Menu
 
 class UserInterface(
     private val output: OutputView = OutputView(),
@@ -45,33 +45,37 @@ class UserInterface(
     fun printMyOrders(menus: List<Menu>) {
         output.printMyOrders(menus)
     }
+
     fun printGiftEventIntroMsg() {
         output.printGiftEventIntroMsg()
     }
-    fun printGiftEvent(gift:String, count:Int) {
+
+    fun printGiftEvent(gift: String, count: Int) {
         output.printGift(gift, count)
     }
+
     fun printBenefitIntroMsg() {
         output.printBenefitIntroMsg()
     }
 
-    fun printBenefit(eventName:String, saleAmount:Int) {
+    fun printBenefit(eventName: String, saleAmount: Int) {
         output.printBenefit(eventName, saleAmount)
     }
 
     fun printTotalBenefitAmountIntroMsg() {
         output.printTotalBenefitAmountIntroMsg()
     }
-    fun printTotalBenefitAmount(amount:Int) {
+
+    fun printTotalBenefitAmount(amount: Int) {
         output.printTotalBenefitAmount(amount)
     }
 
-    fun printFinalPrice(price:Int) {
+    fun printFinalPrice(price: Int) {
         output.printFinalPriceIntroMsg()
         output.printFinalPrice(price)
     }
 
-    fun printEventBadge(type:String) {
+    fun printEventBadge(type: String) {
         output.printEventBadgeIntroMsg()
         output.printEventBadge(type)
     }

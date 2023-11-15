@@ -1,7 +1,6 @@
 package christmas.io
 
 import camp.nextstep.edu.missionutils.Console
-import christmas.Menu
 import christmas.exception.ExceptionChecker
 
 class InputView(private val checker: ExceptionChecker = ExceptionChecker()) {
@@ -18,7 +17,7 @@ class InputView(private val checker: ExceptionChecker = ExceptionChecker()) {
 
         val orders = mutableListOf<Pair<String, Int>>()
         val menus = Console.readLine().split(",")
-        for(menu in menus) {
+        for (menu in menus) {
             orders.add(checker.checkMenus(menu))
         }
         checker.checkOrders(orders)

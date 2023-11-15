@@ -1,35 +1,36 @@
-package christmas
+package christmas.user
 
 import christmas.event.*
 import christmas.io.UserInterface
 
 
 class Benefits(
-    private val myBenefits:MutableList<ISaleEvent>
+    private val myBenefits: MutableList<ISaleEvent>
 ) {
 
 
-    fun addMyBenefit(event:ISaleEvent) {
+    fun addMyBenefit(event: ISaleEvent) {
         myBenefits.add(event)
     }
 
     fun isGiftEvent(): Boolean {
-        for(benefit in myBenefits) {
-            if(benefit is GiftEvent ) {
+        for (benefit in myBenefits) {
+            if (benefit is GiftEvent) {
                 return true
             }
         }
         return false
     }
+
     fun printMyBenefits() {
         val ui = UserInterface()
 
         ui.printBenefitIntroMsg()
-        if(myBenefits.isEmpty()) {
+        if (myBenefits.isEmpty()) {
             ui.printNothing()
             return
         }
-        for(benefit in myBenefits) {
+        for (benefit in myBenefits) {
             benefit.printMySale()
         }
     }
@@ -41,9 +42,9 @@ class Benefits(
         ui.printTotalBenefitAmount(getTotalBenefitAmount())
     }
 
-    fun getTotalBenefitAmount():Int {
+    fun getTotalBenefitAmount(): Int {
         var totalBenefitAmount = 0
-        for(benefit in myBenefits) {
+        for (benefit in myBenefits) {
             totalBenefitAmount += benefit.getAmount()
         }
         return totalBenefitAmount
@@ -51,8 +52,8 @@ class Benefits(
 
     fun getTotalDiscount(): Int {
         var totalBenefitDiscount = 0
-        for(benefit in myBenefits) {
-            if(benefit is GiftEvent) {
+        for (benefit in myBenefits) {
+            if (benefit is GiftEvent) {
                 continue
             }
             totalBenefitDiscount += benefit.getAmount()

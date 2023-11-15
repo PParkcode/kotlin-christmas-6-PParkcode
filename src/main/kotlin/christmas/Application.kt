@@ -1,7 +1,6 @@
 package christmas
 
-import christmas.io.InputView
-import christmas.io.UserInterface
+import christmas.controller.EventController
 
 fun main() {
     val eventController = EventController()

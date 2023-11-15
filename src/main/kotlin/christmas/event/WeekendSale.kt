@@ -2,14 +2,14 @@ package christmas.event
 
 import christmas.io.UserInterface
 
-class WeekendSale(private val amount: Int): ISaleEvent {
+class WeekendSale(private val eventName: String, private val amount: Int) : ISaleEvent {
 
     override fun printMySale() {
         val ui = UserInterface()
-        ui.printBenefit("주말 할인", amount)
+        ui.printBenefit(eventName, amount)
     }
 
-    override fun getAmount():Int {
+    override fun getAmount(): Int {
         return amount
     }
 }
